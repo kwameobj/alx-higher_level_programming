@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 
-#1-last_digit.py - a python code that randomly generates a number
-#                  and prints its last number with some information
+# 1-last_digit.py - a python code that randomly generates a number
+# and prints its last number with some information
 
 import random
 number = random.randint(-10000, 10000)
 str_1 = "Last digit of {} is {} and is "
-
 
 if number >= 0:
     last_num = number % 10
