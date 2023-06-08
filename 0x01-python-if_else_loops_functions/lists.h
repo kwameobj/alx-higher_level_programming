@@ -11,4 +11,8 @@ def uppercase(str):
 
 def print_last_digit(number):
 
+def pow(a, b):
+
+
+
 #endif
