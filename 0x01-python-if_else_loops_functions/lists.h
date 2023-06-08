@@ -13,6 +13,6 @@ def print_last_digit(number):
 
 def pow(a, b):
 
-
+def fizzbuzz():
 
 #endif
