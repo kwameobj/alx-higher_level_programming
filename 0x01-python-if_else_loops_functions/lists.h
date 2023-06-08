@@ -5,6 +5,6 @@
 
 #include <stdlib.h>
 
-
+def islower(c):
 
 #endif
