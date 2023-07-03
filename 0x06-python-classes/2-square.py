@@ -1,14 +1,22 @@
 #!/usr/bin/python3
-class Square:
-    """ Creates a class called Square
+"""A file that contians python code to create a class
+   and name it Square
+   """
 
+
+class Square:
+    """Creates a class Square.
+
+    Attributes:
+        size (int): the length of one side of the square
     """
 
-    def __init__(self, size = 0):
-        """ Initializes the attritube "size" of the class
+    def __init__(self, size=0):
+        """Initializes the attribute "size" of the class
+           and raises an error if the vale is not an integer
 
         Args:
-            size(int): The size of the class square
+            size (int): size of the class square which
 
         """
         
