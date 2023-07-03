@@ -3,6 +3,7 @@
    to initialise an empty class named Square.
    """
 
+
 class Square:
     """Creates an empty class Square.
 
