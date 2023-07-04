@@ -12,7 +12,7 @@ class Square:
             size(int): The size of the class square
         """
         self.size = size
-    
+
     @property
     def size(self):
         """Gets a private attribute size"""
