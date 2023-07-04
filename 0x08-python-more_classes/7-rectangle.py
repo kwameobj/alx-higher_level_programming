@@ -1,9 +1,16 @@
 #!/usr/bin/python3
-""" Defines rectangle class """
+"""Creates rectangle class"""
 
 
 class Rectangle:
-    """ Rectangle with private instance attributes width and height """
+    """Creates class rectangle class
+       with private instance attributes width and height
+
+    Attributes:
+        width: width of rectangle
+        height: height of rectangle
+
+    """
 
     number_of_instances = 0
     print_symbol = "#"
@@ -22,12 +29,14 @@ class Rectangle:
 
     @property
     def width(self):
-        """ Finds the width """
+        """Initialises a private attribute width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Validates width as a positive integer """
+        """Sets the width and raises an error
+           if it is not a positive integer
+        """
         if type(value) is not int:
             raise TypeError('width must be an integer')
         if value < 0:
@@ -36,12 +45,14 @@ class Rectangle:
 
     @property
     def height(self):
-        """ Finds the height """
+        """Initialises a private attribute height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ Validates height as a positive integer """
+        """Sets the height and raises an error
+           if it not a positive integer
+        """
         if type(value) is not int:
             raise TypeError('height must be an integer')
         if value < 0:
@@ -49,17 +60,17 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """ Returns area of the rectangle """
+        """"""
         return self.width * self.height
 
     def perimeter(self):
-        """ Returns perimeter of the rectangle """
+        """Calculates the aea of the rectangle"""
         if self.width == 0 or self.height == 0:
             return 0
         return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
-        """ Returns string version of the rectangle"""
+        """alculates the perimeter of the rectangle"""
         string = ""
         if self.width == 0 or self.height == 0:
             return string
@@ -70,10 +81,10 @@ class Rectangle:
         return string
 
     def __repr__(self):
-        """ Returns string representation of the rectangle """
+        """print the rectangle with the character #"""
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
 
     def __del__(self):
-        """ Prints message when an instance is deleted """
-        print("Bye rectangle...")
+        """Prints a message when an instance is deleted"""
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
