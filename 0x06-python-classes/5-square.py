@@ -30,12 +30,12 @@ class Square:
 
     def area(self):
         """Returns the area of the square"""
-        return self.__size * self.__size
+        return self.size * self.size
 
     def my_print(self):
         """prints in stdout the square with the character #"""
-        if (self.size == 0):
-            return ""
-        for i in range(self.size):
+        if (self.__size == 0):
+            print("")
+        for i in range(self.__size):
             print("#" * self.size, end="")
-            print()
+            print("")
