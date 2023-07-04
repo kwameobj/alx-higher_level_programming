@@ -39,11 +39,11 @@ class Square:
         """Sets value for position and raises an error
            if the value does not meet some criterias
         """
-        if(type(value) is not tuple or len(value) is not 2 or
+        if (type(value) is not tuple or len(value) is not 2 or
            type(value[0]) is not int or
            type(value[1]) is not int):
             raise TypeError("position must be a tuple of 2 positive integers")
-        if(value[0] < 0 or value[1] < 0):
+        if (value[0] < 0 or value[1] < 0):
             raise ValueError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -55,7 +55,8 @@ class Square:
         """prints in stdout the square with the character #"""
         if (self.__size == 0):
             print("")
+            return
         for i in range(self.__position[1]):
             print("")
         for i in range(self.__size):
-            print("{}{}".format(" " * self.position[0], "#" * self.size))
+            print("{}{}".format(" " * self.position[0], "#" * self.__size))
