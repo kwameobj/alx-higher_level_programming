@@ -5,13 +5,14 @@
 class Square:
     """Creates a class called Square"""
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """Initializes the attritube(s) of the class Square
 
         Args:
             size(int): The size of the class square
         """
         self.__size = size
+        self.__position = position
 
     @property
     def size(self):
