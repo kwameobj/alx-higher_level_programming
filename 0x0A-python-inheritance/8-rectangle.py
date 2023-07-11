@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """a class Rectangle that inherits from BaseGeometry"""
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
 class Rectangle(BaseGeometry):
     """Creates class Rectangle that inherits BaseGeometry"""
+
     def __init__(self, width, height):
         """
         Initialises the attributes width and height and
@@ -14,7 +16,7 @@ class Rectangle(BaseGeometry):
             heing (int): measure of one side of the rectangle
 
         Return:
-            The class
+            The class with its attributes set
         """
         if self.integer_validator("width", width):
             self.__width = width
