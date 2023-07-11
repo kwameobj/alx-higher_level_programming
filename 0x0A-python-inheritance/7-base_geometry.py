@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""creates class BaseGeometry"""
+"""contains class BaseGeometry"""
 
 
 class BaseGeometry:
-    """creates class BaseGeometry"""
+    """defines class BaseGeometry"""
 
     def area(self):
-        """raises an Exception with a message"""
-        raise Exception('area() is not implemented')
+        """raises an  Exception"""
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """validates value as a positive integer"""
