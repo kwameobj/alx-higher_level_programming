@@ -1,16 +1,14 @@
-#!/bin/usr/python3
-"""Creates class MyList"""
+#!/usr/bin/python3
+''' Module: 1-my_list
+'''
+
+
 class MyList(list):
-    """function that prints sorted items"""
+    ''' Represents a MyList
+    '''
+
     def print_sorted(self):
-        """
-        print_sorted is a function that prints the list,
-        but sorted (ascending sort)
-
-        Args:
-            self: puts the instance of the class there
-
-        Returns:
-            a sorted list in ascending order
-        """
+        '''
+        prints the list, but sorted
+        '''
         print(sorted(self))
