@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""7-base_geometry.py: creates class BaseGeometry"""
+"""creates class BaseGeometry"""
 
 
 class BaseGeometry:
@@ -19,10 +19,14 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """
-         that validates value
+        that validates value
+
         Args:
             name (string): name of instance
             value (int): value of instance
+
+        Return:
+            an exception
         """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
