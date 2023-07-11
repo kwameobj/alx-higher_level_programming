@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """a class Rectangle that inherits from BaseGeometry"""
-
-
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
@@ -12,13 +10,6 @@ class Rectangle(BaseGeometry):
         """
         Initialises the attributes width and height and
         validates if they are positive integers
-
-        Args:
-            width (int): measure of one side of the rectangle
-            heing (int): measure of one side of the rectangle
-
-        Return:
-            The class
         """
         self.integer_validator("width", width)
         self.__width = width
@@ -30,5 +21,5 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
     def __str__(self):
-        """prints rectangle description"""
+        """returns rectangle description"""
         return "[Rectangle] = {}/{}".format(self.__width, self.__height)
