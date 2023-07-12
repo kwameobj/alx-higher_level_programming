@@ -6,6 +6,7 @@ import sys
 
 
 def print_size_and_codes(size, stat_codes):
+    """asd"""
     print("File size: {:d}".format(size))
     for k, v in sorted(stat_codes.items()):
         if v:
@@ -13,6 +14,7 @@ def print_size_and_codes(size, stat_codes):
 
 
 def parse_stdin_and_compute():
+    """asd"""
     size = 0
     lines = 0
     stat_codes = {"200": 0, "301": 0, "400": 0, "401": 0,
