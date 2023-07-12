@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""reads stdin line by line and computes metrics"""
+"""Script reads stdin line by line and computes metrics"""
+
+
 import sys
 
 
-def print_size_and_statcodes(size, stat_codes):
-    """print file size and status codes"""
+def print_size_and_codes(size, stat_codes):
     print("File size: {:d}".format(size))
     for k, v in sorted(stat_codes.items()):
         if v:
@@ -12,7 +13,6 @@ def print_size_and_statcodes(size, stat_codes):
 
 
 def parse_stdin_and_compute():
-    """computing function"""
     size = 0
     lines = 0
     stat_codes = {"200": 0, "301": 0, "400": 0, "401": 0,
@@ -25,12 +25,12 @@ def parse_stdin_and_compute():
                 stat_codes[fields[-2]] += 1
             lines += 1
             if lines % 10 == 0:
-                print_size_and_statcodes(size, stat_codes)
+                print_size_and_codes(size, stat_codes)
     except KeyboardInterrupt:
-        print_size_and_statcodes(size, stat_codes)
+        print_size_and_codes(size, stat_codes)
         raise
 
-    print_size_and_statcodes(size, stat_codes)
+    print_size_and_codes(size, stat_codes)
 
 
 parse_stdin_and_compute()
