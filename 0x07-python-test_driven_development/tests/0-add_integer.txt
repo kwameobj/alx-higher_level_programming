@@ -1,71 +1,63 @@
-The ``0-add_integer`` module
-============================
+#0-add_integer.txt
+===============================
+ How to 0-add_integer.py
+===============================
 
-Using ``add_integer``
----------------------
+This library is very simple, since it only has one function called
+``add_integer()``.
 
-This is an example text file in reStructuredText format. First import
-``add_integer`` from the ``0-add_integer`` module:
+Numbers
+=======
 
->>> add_integer = __import__('0-add_integer').add_integer
+``add_integer()`` returns the addition of its arguments.  For numbers,
+that value is equivalent to using the ``+`` operator.
 
-Now use it:
+::
+    >>> add_integer = __import__("0-add_integer").add_integer
+    >>> add_integer(2, 3)
+    5
 
->>> add_integer(2, 3)
-5
+It also works with floating-point values and reverts it to int.
 
->>> add_integer(100.3, -2)
-98
+::
 
->>> add_integer(-True, False)
--1
+    >>> add_integer(2.0, 3.0)
+    5
 
->>> add_integer(-True, -False)
--1
+a has to be something or an exception will be thrown.
+if b is not specified it will default to 98
 
->>> add_integer(True, False)
-1
+::
+    >>> add_integer(0)
+    98
+    >>> add_integer(2.0,)
+    100
+    >>> add_integer(-5.5,100.3)
+    95
 
->>> add_integer(True, -False)
-1
+Non-Numbers
+===========
 
->>> add_integer(100.3, 100.3)
-200
+Non-numbers should throw TypeError Exceptions
 
->>> add_integer("school", 100.3)
+::
+
+    >>> add_integer('a', 3)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(2,['A', 'B', 'C'])
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer({'a':1},)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+>>> add_integer(float('inf'))
 Traceback (most recent call last):
-...
-TypeError: a must be an integer
-
->>> add_integer("Holberton", "School")
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
-
->>> add_integer(None, "School")
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
-
->>> add_integer(5.25, 3.3)
-8
-
->>> add_integer(10, None)
-Traceback (most recent call last):
-...
-TypeError: b must be an integer
-
->>> add_integer("adc", 10)
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
-
->>> add_integer(float('inf'),8)
-Traceback (most recent call last):
-...
 OverflowError: cannot convert float infinity to integer
 
->>> add_integer(float('NaN'), 7)
+>>> add_integer(float('NaN'))
 Traceback (most recent call last):
-...
 ValueError: cannot convert float NaN to integer
