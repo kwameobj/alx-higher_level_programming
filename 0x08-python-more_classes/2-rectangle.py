@@ -1,4 +1,4 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 """rectangle class"""
 
 
@@ -69,8 +69,8 @@ class Rectangle:
         return self.width * self.height
 
     def perimeter(self):
-        """Calculates permeter"""
+        """Calculates perimeter"""
         if self.width or self.height == 0:
             return 0
         else:
-            return 2(self. width + self.height)
+            return 2(self.width + self.height)
