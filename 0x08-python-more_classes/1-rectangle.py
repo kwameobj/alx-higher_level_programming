@@ -30,7 +30,7 @@ class Rectangle:
     def width(self, value):
         """
         Sets width
-        
+
         Args:
             value(int): value of width
 
