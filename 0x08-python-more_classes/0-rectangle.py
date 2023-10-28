@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""rectangle class"""
+"""
+Defines an empty class Rectangle
+"""
 
 
 class Rectangle:
-    """makes rectangle object"""
-    def __init__(self):
-        pass
+    """Empty representation of a rectangle"""
+    pass
