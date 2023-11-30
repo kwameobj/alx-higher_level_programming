@@ -4,6 +4,7 @@ This is the 0-add_integer module
 It contains one function, add_integer(a, b)
 """
 
+
 def add_integer(a, b=98):
     """Returns a + b"""
     if not isinstance(a, (int, float)):
