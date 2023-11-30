@@ -1,0 +1,81 @@
+The ``0-add_integer`` module
+===================
+
+Using ``add_integer``
+-------------------
+import module:
+         >>> add_integer = __import__("0-add_integer").add_integer
+
+two integers:
+	 >>> add_integer(2, 5)
+	 7
+
+two floats:
+	 >>> add_integer(2.1, 5.4)
+	 7
+
+one integer and one float:
+         >>> add_integer(2, 5.4)
+         7
+
+one float and one integer:
+         >>> add_integer(2.1, 5)
+         7
+
+two negative numbers:
+         >>> add_integer(-2, -5)
+         -7
+
+one negative number and one positive number:
+         >>> add_integer(-2, 5)
+         3
+
+big numbers:
+         >>> add_integer(20000000000000, 50000000000000)
+         70000000000000
+
+a is inf:
+         >>> add_integer(float('inf'), 5)
+         Traceback (most recent call last):
+                   ...
+         OverflowError: cannot convert float infinity to integer
+
+a is NaN:
+         >>> add_integer(float('NaN'), 5)
+         Traceback (most recent call last):
+                   ...
+         ValueError: cannot convert float NaN to integer
+
+a is a string:
+         >>> add_integer("test", 5)
+	 Traceback (most recent call last):
+	 	   ...
+	 TypeError: a must be an integer
+
+b is a string:
+         >>> add_integer(2, "test")
+	 Traceback (most recent call last):
+	 	   ...
+         TypeError: b must be an integer
+
+a and b are both strings:
+         >>> add_integer("hello", "world")
+         Traceback (most recent call last):
+	 	   ...
+	 TypeError: a must be an integer
+
+zero arguments:
+	>>> add_integer()
+	Traceback (most recent call last):
+		  ...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+one argument:
+    	>>> add_integer(1)
+	99
+
+more than two arguments:
+    	 >>> add_integer(1, 2, 3)
+	 Traceback (most recent call last):
+	 	   ...
+	 TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
