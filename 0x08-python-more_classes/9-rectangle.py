@@ -34,7 +34,8 @@ class Rectangle:
     @classmethod
     def square(cls, size = 0):
         """returns an instance that is a square"""
-    return cls(size, size)
+        size == width == height
+        return cls(size, size)
 
     @property
     def width(self):
