@@ -61,3 +61,40 @@ class Rectangle(Base):
     def y(self, value):
         """setter for private instance attribute y"""
         return self.__y = value
+
+    def area(self):
+        """return area of rectangle"""
+        return self.width * self.height
+
+    def update(self, *args, **kwargs):
+        """update attributes"""
+        if args:
+            listme = ['id', 'width', 'height', 'x', 'y']
+            i = 0
+            for arg in args:
+                setattr(self, listme[i], arg)
+                i += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def display(self):
+        """
+        print into stdout
+        return: na
+        """
+        for row in range(self.y):
+            print()
+        for row in range(self.height):
+            print("{}{}".format(" " * self.x, "#" * self.width))
+
+    def __str__(self):
+        """print method"""
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.__x, self.__y,
+                                                self.__width, self.__height)
+
+    def to_dictionary(self):
+        """return dict representation of Rectangle"""
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
