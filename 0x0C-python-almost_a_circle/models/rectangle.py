@@ -1,69 +1,30 @@
 #!/usr/bin/python3
-"""defines a Rectangle class"""
+"""
+Class Module
+"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class"""
+    """Rectangle subclass"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        initialization method
+        """instance initialization method
 
         args:
             width: width of rectangle
-            height: width of rectangle
+            height: height of rectangle
             x: init variable
             y: init variable
         """
-        super().__init__()
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
 
-    @property
-    def width(self):
-        """private instance attribute width"""
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        """setter for private instance attribute width"""
-        return self.__width = value
-
-    @property
-    def height(self):
-        """private instance attribute height"""
-        return self.__height
-
-    @height.setter
-    def width(self, value):
-        """setter for private instance attribute height"""
-        return self.__height = value
-
-    @property
-    def x(self):
-        """private instance attribute x"""
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        """setter for private instance attribute x"""
-        return self.__x = value
-
-    @property
-    def y(self):
-        """private instance attribute y"""
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        """setter for private instance attribute y"""
-        return self.__y = value
-
     def area(self):
-        """return area of rectangle"""
+        """return area of width & height"""
         return self.width * self.height
 
     def update(self, *args, **kwargs):
@@ -79,8 +40,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def display(self):
-        """
-        print into stdout
+        """print into stdout
         return: na
         """
         for row in range(self.y):
@@ -98,3 +58,47 @@ class Rectangle(Base):
         """return dict representation of Rectangle"""
         return {'x': self.x, 'y': self.y, 'id': self.id,
                 'height': self.height, 'width': self.width}
+
+    @property
+    def width(self):
+        """width getter method"""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """width setter method"""
+        self.integer_validator('width', value)
+        self.__width = value
+
+    @property
+    def height(self):
+        """height getter method"""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """height setter method"""
+        self.integer_validator('height', value)
+        self.__height = value
+
+    @property
+    def x(self):
+        """x getter method"""
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """x setter method"""
+        self.integer_validator2('x', value)
+        self.__x = value
+
+    @property
+    def y(self):
+        """y getter method"""
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """y setter method"""
+        self.integer_validator2('y', value)
+        self.__y = value

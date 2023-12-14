@@ -1,24 +1,20 @@
 #!/usr/bin/python3
-"""class Base"""
+"""
+Class Module
+"""
 import json
 
 
 class Base:
-    """
-    Base class
-
+    """ base class
     Attributes:
-        __nb_objects: number of objects
+        _nb_objects: number of objects created
         id: id of object
-
     """
-
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        initializing method
-
+        """initiation method
         args:
             id: id of object
         """
@@ -28,19 +24,19 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    def int_val(self, name, value):
-        """checks if value is integer"""
+    def integer_validator(self, name, value):
+        """check if value is an integer"""
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
-            raise ValueError("{} must be >= 0".format(name))
+            raise ValueError('{} must be > 0'.format(name))
 
-    def int_val2(self, name, value):
-        """checks if value is integer"""
+    def integer_validator2(self, name, value):
+        """check if value is an integer"""
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be >= 0".format(name))
+            raise TypeError('{} must be an integer'.format(name))
+        if value < 0:
+            raise ValueError('{} must be >= 0'.format(name))
 
     @staticmethod
     def to_json_string(list_dictionaries):
